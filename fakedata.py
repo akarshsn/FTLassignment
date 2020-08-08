@@ -19,8 +19,8 @@ def dummy(N=5):
         fake_start_date = fakegen.date_time_this_month(before_now=True, after_now=False, tzinfo=None)
         fake_end_date = fakegen.date_time_this_month(before_now=False, after_now=True, tzinfo=None)
 
-        usr  = User.objects.get_or_create(id=fake_id,real_name=fake_name,tz=fake_tz)[0]
-        acty = Activity.objects.get_or_create(user=usr,start_time=fake_start_date,end_time=fake_end_date)[0]
+        user  = User.objects.get_or_create(id=fake_id,real_name=fake_name,tz=fake_tz)[0]
+        activity = Activity.objects.get_or_create(user=user,start_time=fake_start_date,end_time=fake_end_date)[0]
 
 
 if __name__ == '__main__':
